@@ -30,15 +30,21 @@ public class Main {
             e.printStackTrace();
         }
         
-//        System.out.println(Arrays.toString(data.get(3)));
-//        System.out.println(Arrays.toString(data.get(4)));
-//        CalculateDistance distance = new CalculateDistance(data.get(3), data.get(4));
-//        
-//        System.out.println("Distance: " + distance.calculateDistance());
+//      Part 2 get distances between 2 samples
+//      Distance distance = new Distance(data.get(3), data.get(4));
+//      System.out.println("Distance: " + distance.calculateDistance());
 
-           Score s = new Score(data);
+//      Part 3 show scores between all samples 
+//      Score score = new Score(data);
+//      score.displayScore();
+
+//     Part 4 show closest samples with N samplers
+//     Score score = new Score(data);
+//     score.displayClosest(3);
            
-           s.displayAccuracies();
+//   Part 4 ii show accuracy of diagnosis prediction with N samples
+     Score score = new Score(data);  
+     score.displayAccuracies(); 
     }
     
 }
