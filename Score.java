@@ -28,7 +28,6 @@ public class Score extends Distance {
     
 //  Print out distances   
     public void displayScore(){
-        int compareTo = 1;
         System.out.println("Sample                 Sample          Distance");
         System.out.println("------------------------------------------------");
         
