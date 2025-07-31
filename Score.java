@@ -117,7 +117,7 @@ public class Score extends Distance {
             }
             
 //          find most repeated diagnosis
-            String predictedDiagnosis = calulatePredictedDiagnosis(diagnosisList);
+            String predictedDiagnosis = calculatedPredictedDiagnosis(diagnosisList);
 //          Find actual diagnosis of sample A  
             int sampleAIndex = (int) Double.parseDouble(sortedList.get(sample)[0]);
             String actualDiagnosis =  data.get(sampleAIndex)[1];
@@ -135,7 +135,7 @@ public class Score extends Distance {
     }
     
 //    Find most frequent diagnosis
-    private String calulatePredictedDiagnosis(List<String> diagnosisList){
+    private String calculatedPredictedDiagnosis(List<String> diagnosisList){
         
         int diagnosisB=0;
         int diagnosisM=0;
