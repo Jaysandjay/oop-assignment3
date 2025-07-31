@@ -28,7 +28,7 @@ public class Score extends Distance {
     
 //  Print out distances   
     public void displayScore(){
-        System.out.println("Sample                 Sample          Distance");
+        System.out.printf("%-12s %-12s %-25s \n", "Sample A", "Sample B", "Distance");
         System.out.println("------------------------------------------------");
         
         for(double[] row : scoreList){
@@ -36,13 +36,13 @@ public class Score extends Distance {
             int sampleB = (int) row[1];     
             double distance = row[2];
             
-            System.out.printf("Sample %d              Sample %d         %f \n", sampleA, sampleB, distance);
+            System.out.printf("%-12s %-12s %-25s \n", "Sample " + sampleA, "Sample " + sampleB, distance);
         }                 
     }
     
 //  Print out N closest samples for each sample 
     public void displayClosest(int num){
-        System.out.println("Sample A                Sample B         Distance                     Diagnosis");
+        System.out.printf("%-12s %-12s %-25s %-10s \n", "Sample A", "Sample B", "Distance", "Diagnosis");
         System.out.println("--------------------------------------------------------------------------------");        
         List<String[]> sortedList = calculateSortedList(num);
             for(String[] row : sortedList){
@@ -51,7 +51,7 @@ public class Score extends Distance {
                 String distance = row[2];
                 String diagnosis = row[3];
         
-                System.out.printf("Sample %s              Sample %s         %s             %s \n", sampleA, sampleB, distance, diagnosis);
+                System.out.printf("%-12s %-12s %-25s %-10s \n", "Sample " + sampleA, "Sample " + sampleB, distance, diagnosis);
         }   
         
     }
@@ -77,8 +77,8 @@ public class Score extends Distance {
                     String diagnosis = data.get(sampleBIndex)[1];
                     
                     String[] rowToAdd = {
-                        String.valueOf(row[0]), //Sample A Index
-                        String.valueOf(row[1]), //Sample B Index
+                        String.valueOf((int) row[0]), //Sample A Index
+                        String.valueOf((int) row[1]), //Sample B Index
                         String.valueOf(row[2]), // Distance
                         diagnosis               //Diagnosis of Sample B
                     };
@@ -154,12 +154,14 @@ public class Score extends Distance {
     public void displayAccuracies(){
         int[] nValues = {3, 5, 7, 11, 13};
         
-        System.out.println("N    Accuracy%");
-        System.out.println("---------------");
+        System.out.printf("%-5s %-25s \n", "N", "Accuracy%");
+        System.out.println("-------------------------");
         
         for(int n: nValues){
-            System.out.println(n + "     " + calculateAccuracy(n));
+            System.out.printf("%-5s %-25s \n", n, calculateAccuracy(n));
         }
+
+        System.out.println("-------------------------");
         
     }
     
