@@ -1,4 +1,4 @@
-//Jasmine Sanders
+// Jasmine Sanders Darryl LeCraw
 
 public class Distance {
     private String[] data1, data2;
